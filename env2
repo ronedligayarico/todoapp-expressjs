@@ -1,0 +1,2 @@
+MONGO_URI=mongodb+srv://ronzxc1998:09236373759qwe@cluster0.7fkoo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+PORT=8000

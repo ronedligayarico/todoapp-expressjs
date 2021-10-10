@@ -1,23 +1,30 @@
 const express = require('express')
 const app = express()
 require('dotenv').config()
+//Import Routes
+const userRoutes = require('./routes/user')
 
-app.get('/' ,(req, res) => {
-    res.send('Hellow from nodes');
-})
+//App Route
+app.use('/api',userRoutes)
 
+// app.get('/' ,(req, res) => {
+//     res.send('Hellow from nodes');
+// })
+
+//Port
 const port = process.env.PORT || 8000
-
 app.listen(port, () => {
     console.log(`Server is running on PORT ${port}`)
 })
-// import mongoose
+
+// import mongoose DB
 const mongoose = require('mongoose');
+
 // load env variables
 const dotenv = require('dotenv');
 dotenv.config()
- 
-//db connection
+
+//DB connection
 mongoose.connect(process.env.MONGO_URI,
   {useNewUrlParser: true}
 )
